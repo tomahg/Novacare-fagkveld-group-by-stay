@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GroupByStay | Novacare",
-  description: "Påmelding og gruppeinndeling for arrangement",
+  title: "Fagkveld | Novacare",
+  description: "Påmelding og gruppeinndeling for fagkveld i Novacare",
 };
 
 export default function RootLayout({

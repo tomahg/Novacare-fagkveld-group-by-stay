@@ -37,6 +37,7 @@ export default function JoinPage() {
     "idle" | "loading" | "success" | "left" | "error"
   >("loading");
   const [submitting, setSubmitting] = useState(false);
+  const [wasUpdate, setWasUpdate] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const checkExisting = useCallback(async () => {
@@ -67,6 +68,7 @@ export default function JoinPage() {
   const handleJoin = async () => {
     if (!name.trim()) return;
     setSubmitting(true);
+    setWasUpdate(!!existingId);
     setErrorMessage("");
 
     try {
@@ -172,7 +174,7 @@ export default function JoinPage() {
 
         {status === "success" && (
           <div className="mb-6 p-4 bg-teal-light rounded-xl text-teal-dark font-medium">
-            {existingId ? "Påmeldingen er oppdatert!" : "Du er påmeldt!"}
+            {wasUpdate ? "Påmeldingen er oppdatert!" : "Påmeldingen er registrert!"}
           </div>
         )}
 

@@ -4,6 +4,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Fagkveld | Novacare",
   description: "Påmelding og gruppeinndeling for fagkveld i Novacare",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
